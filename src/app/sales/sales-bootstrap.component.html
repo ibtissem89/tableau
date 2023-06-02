@@ -1,0 +1,51 @@
+
+<table class="table">
+    
+    <thead class="table-dark">
+        <tr>
+        <th>
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           VolumeSales
+        </th>
+        <th>
+           Met Quota ?
+         </th>
+    </tr>
+    </thead>
+   
+    <tbody>
+        <tr *ngFor="let item of listsalesPerson ">
+            <td>
+                {{  item .firstname}}
+            </td>
+            <td>
+                {{item.lastname}}
+            </td>
+            <td>
+                {{ item.email}}
+            </td>
+            <td>
+                {{ item.volumesale}}
+            </td>
+            <td *ngIf="item.volumesale>6000 ; else showNo">
+                Yes
+            </td>
+            <ng-template #showNo>
+              <td> No</td>
+            </ng-template>
+                
+            
+
+
+        
+        </tr>
+    </tbody>
+</table>
